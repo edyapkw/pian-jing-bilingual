@@ -14,7 +14,16 @@ python3 -m http.server 8766
 
 Or open `index.html` in a browser.
 
-## Rebuild
+## Deploy (Vercel)
+
+Static site — no build step, no password. Config matches [leeao-bilingual](https://github.com/edyapkw/leeao-bilingual) (`vercel.json` security headers + `robots.txt`).
+
+**Live:** https://pian-jing-bilingual.vercel.app
+
+```bash
+vercel --prod
+```
+
 
 ```bash
 python3 scripts/parse_source.py
