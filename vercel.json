@@ -6,7 +6,11 @@
       "headers": [
         {
           "key": "X-Robots-Tag",
-          "value": "noindex, nofollow, noarchive, nosnippet"
+          "value": "noindex, nofollow, noarchive, nosnippet, noimageindex, nocache, max-snippet:0, max-image-preview:none, max-video-preview:0"
+        },
+        {
+          "key": "Content-Signal",
+          "value": "search=no, ai-train=no, ai-input=no"
         },
         {
           "key": "X-Frame-Options",
