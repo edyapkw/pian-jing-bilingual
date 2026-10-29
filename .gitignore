@@ -2,3 +2,6 @@
 *.swp
 __pycache__/
 .vercel
+.env
+.env.*
+translation_qa_report*.json
