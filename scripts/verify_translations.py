@@ -266,7 +266,7 @@ def _post_json(url: str, payload: dict, headers: dict, timeout: int = 60) -> tup
 
 
 def _extract_json(text: str) -> dict:
-    """Robust JSON extraction from LLM response."""
+    """Robust JSON extraction from LLM response with fallback repair for truncation."""
     text = text.strip()
     if text.startswith("```"):
         text = re.sub(r"^```(?:json)?\s*", "", text)
@@ -277,7 +277,17 @@ def _extract_json(text: str) -> dict:
     if m:
         text = m.group(0)
 
-    return json.loads(text)
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        # Heuristic auto-repair if output was cut off mid-string
+        repaired = text.strip()
+        if not repaired.endswith("}"):
+            if repaired.count('"') % 2 != 0:
+                repaired += '"'
+            if not repaired.endswith("}"):
+                repaired += "}"
+        return json.loads(repaired)
 
 
 def _validate_qa(data: dict) -> dict:
@@ -324,7 +334,7 @@ def qa_pair(zh: str, en: str, kind: str = "body", model: str | None = None) -> d
             {"role": "user", "content": user_msg},
         ],
         "temperature": 0.1,
-        "max_tokens": 1024,
+        "max_tokens": 2048,
         "stream": False,
         "response_format": {"type": "json_object"},
         "enable_thinking": False,
@@ -668,6 +678,7 @@ def run_qa(
                 _print_summary(results)
                 print(f"\nReport saved to: {report_path}")
                 print(f"Issues saved to: {issues_path}")
+                _auto_git_sync(f"Update translation QA report and issues ({len([r for r in results if 'score' in r])} pairs scored)")
                 sys.exit(0)
             results.append({**pair, "error": err_msg})
             time.sleep(max(6.0, delay * 2))
@@ -680,6 +691,30 @@ def run_qa(
     _print_summary(results)
     print(f"\nReport saved to: {report_path}")
     print(f"Issues saved to: {issues_path}")
+    _auto_git_sync("Complete translation QA evaluation for all pairs")
+
+
+def _auto_git_sync(message: str):
+    """Automatically commit and push issues and script changes if inside git repo."""
+    try:
+        import subprocess
+        if not (ROOT / ".git").is_dir():
+            return
+        subprocess.run(["git", "add", "TRANSLATION_ISSUES.md", "README.md", "scripts/verify_translations.py"], cwd=ROOT, check=False)
+        diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT)
+        if diff.returncode != 0:
+            subprocess.run(["git", "commit", "-m", message], cwd=ROOT, check=False)
+            env = dict(os.environ)
+            local_bin = str(Path.home() / ".local" / "bin")
+            if local_bin not in env.get("PATH", ""):
+                env["PATH"] = f"{local_bin}:{env.get('PATH', '')}"
+            res = subprocess.run(["git", "push", "origin", "main"], cwd=ROOT, env=env, check=False, capture_output=True, text=True)
+            if res.returncode == 0:
+                print(f"[Auto-git] Pushed changes to GitHub: {message}")
+            else:
+                print(f"[Auto-git] Git push note: {res.stderr.strip()}", file=sys.stderr)
+    except Exception as e:
+        print(f"[Auto-git] Note: could not auto-push to git: {e}", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------
