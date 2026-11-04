@@ -20,6 +20,7 @@ API credentials are loaded from .env in the project root.
 from __future__ import annotations
 
 import argparse
+import html as html_lib
 import json
 import os
 import random
@@ -100,8 +101,7 @@ WS_RE = re.compile(r"\s+")
 
 def strip_html(html_text: str) -> str:
     text = TAG_RE.sub("", html_text)
-    text = text.replace("&nbsp;", " ").replace("&amp;", "&")
-    text = text.replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", '"').replace("&#39;", "'")
+    text = html_lib.unescape(text).replace("\xa0", " ")
     return WS_RE.sub(" ", text).strip()
 
 
@@ -319,6 +319,22 @@ def _validate_qa(data: dict) -> dict:
 
 def qa_pair(zh: str, en: str, kind: str = "body", model: str | None = None) -> dict:
     """Score one ZH/EN pair via ModelScope Qwen."""
+    user_msg = f"Segment Type: {kind}\n\nChinese: {zh}\n\nEnglish translation: {en}"
+    return chat_json(QA_SYSTEM, user_msg, _validate_qa, model=model)
+
+
+def chat_json(
+    system: str,
+    user_msg: str,
+    validate,
+    model: str | None = None,
+    max_tokens: int = 2048,
+) -> dict:
+    """Send one chat request to ModelScope and return validate(parsed_json).
+
+    Retries on network errors, rate limits, empty output and invalid JSON.
+    Raises InsufficientBalanceError immediately when the balance is exhausted.
+    """
     if not MODELSCOPE_SDK_TOKEN:
         raise RuntimeError(
             "Missing MODELSCOPE_SDK_TOKEN. Add it to .env:\n"
@@ -326,15 +342,14 @@ def qa_pair(zh: str, en: str, kind: str = "body", model: str | None = None) -> d
             "Get a token at https://www.modelscope.ai/my/myaccesstoken"
         )
 
-    user_msg = f"Segment Type: {kind}\n\nChinese: {zh}\n\nEnglish translation: {en}"
     payload = {
         "model": model or MODELSCOPE_MODEL,
         "messages": [
-            {"role": "system", "content": QA_SYSTEM},
+            {"role": "system", "content": system},
             {"role": "user", "content": user_msg},
         ],
         "temperature": 0.1,
-        "max_tokens": 2048,
+        "max_tokens": max_tokens,
         "stream": False,
         "response_format": {"type": "json_object"},
         "enable_thinking": False,
@@ -380,7 +395,7 @@ def qa_pair(zh: str, en: str, kind: str = "body", model: str | None = None) -> d
 
         try:
             parsed = _extract_json(content)
-            return _validate_qa(parsed)
+            return validate(parsed)
         except (ValueError, json.JSONDecodeError) as e:
             last_err = e
             time.sleep(2 ** attempt)
@@ -408,44 +423,6 @@ def _top_issues(issues: list, n: int = 10) -> list[dict]:
     ]
 
 
-def _save_report(results: list[dict], path: Path, model: str):
-    scored = [r for r in results if "score" in r]
-    scores = [r["score"] for r in scored]
-    accuracy = [r.get("accuracy", r["score"]) for r in scored]
-    fluency = [r.get("fluency", r["score"]) for r in scored]
-    all_issues = [issue for r in scored for issue in r.get("issues", [])]
-    flagged = [r for r in scored if r["score"] <= 6]
-
-    report = {
-        "model": model,
-        "total_pairs_scored": len(scored),
-        "errors": len(results) - len(scored),
-        "summary": {
-            "avg_score": round(sum(scores) / len(scores), 2) if scores else 0,
-            "avg_accuracy": round(sum(accuracy) / len(accuracy), 2) if accuracy else 0,
-            "avg_fluency": round(sum(fluency) / len(fluency), 2) if fluency else 0,
-            "score_distribution": {str(s): scores.count(s) for s in range(1, 11)},
-            "flagged_count": len(flagged),
-            "common_issues": _top_issues(all_issues),
-        },
-        "flagged_pairs": [
-            {
-                "category_id": r.get("category_id"),
-                "story_id": r.get("story_id"),
-                "story_title": r.get("story_title"),
-                "kind": r.get("kind"),
-                "score": r["score"],
-                "accuracy": r.get("accuracy"),
-                "fluency": r.get("fluency"),
-                "zh": r["zh"],
-                "en": r["en"],
-                "issues": r.get("issues", []),
-                "suggestion": r.get("suggestion", ""),
-            }
-            for r in sorted(flagged, key=lambda x: x["score"])
-        ],
-        "results": results,
-    }
 def _save_markdown_issues(results: list[dict], path: Path, model: str):
     """Write an actionable Markdown document listing all flagged translation issues and suggestions."""
     scored = [r for r in results if "score" in r]
@@ -771,8 +748,11 @@ def main():
     # 2. Filters
     if args.category:
         cat_filter = args.category.strip().lower()
+        if re.fullmatch(r"c?(\d{1,2})", cat_filter):
+            num = int(re.fullmatch(r"c?(\d{1,2})", cat_filter).group(1))
+            cat_filter = f"cat-{num:02d}"
         pairs = [p for p in pairs if p.get("category_id", "").lower() == cat_filter]
-        print(f"Filtered by category '{args.category}': {len(pairs)} pairs")
+        print(f"Filtered by category '{cat_filter}': {len(pairs)} pairs")
 
     if args.notes_only:
         pairs = [p for p in pairs if p.get("kind") == "note"]

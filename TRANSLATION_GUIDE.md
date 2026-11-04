@@ -319,33 +319,35 @@ The English is a **meaning-first study crib**, not a literary prize translation.
 
 Before finalizing a chapter, run these searches in `data/book.json`:
 
-- [ ] `strip` / `stripped` / `stripping` → replace with natural verb
-- [ ] `Note: I observe` → delete “I observe”
-- [ ] `rivers and lakes` → replace
-- [ ] `high hand` → replace
-- [ ] `liang` → `taels`
-- [ ] `satin` → `silk` (if 緞)
-- [ ] `go home` → `head home` / `go back home` (if travel)
-- [ ] `match silver` / `make accounts` → `settle the silver` / `settle accounts`
-- [ ] `wineshop` → `tavern` / `wine shop`
-- [ ] `lizhang` / `jia-head` → `village head` / `tithing head`
-- [ ] `Acting Vice Prefect` → `the vice prefect`
-- [ ] `Alas!` → keep only if the sigh is real
-- [ ] `diarrhea` → `upset stomach` / `sick`
-- [ ] `not of good quality` → `not pure` / `impure`
+- [x] `strip` / `stripped` / `stripping` → replace with natural verb
+- [x] `Note: I observe` → delete “I observe”
+- [x] `rivers and lakes` → replace
+- [x] `high hand` → replace
+- [x] `liang` → `taels`
+- [x] `satin` → `silk` (if 緞)
+- [x] `go home` → `head home` / `go back home` (if travel)
+- [x] `match silver` / `make accounts` → `settle the silver` / `settle accounts`
+- [x] `wineshop` → `tavern` / `wine shop`
+- [x] `lizhang` / `jia-head` → `village head` / `tithing head`
+- [x] `Acting Vice Prefect` → `the vice prefect`
+- [x] `Alas!` → keep only if the sigh is real
+- [x] `diarrhea` → `upset stomach` / `sick`
+- [x] `not of good quality` → `not pure` / `impure`
 
 ---
 
 ## 4. How to apply this guide
 
-1. **Edit `data/book.json` directly.** The HTML is generated from it.
-2. **Rebuild after editing:**
+1. **Edit `data/en2/*.json` (or `data/book.json`) directly**, or run the automated ModelScope correction pipeline (`scripts/apply_corrections.py`).
+2. **Rebuild after editing `data/book.json`:**
    ```bash
-   cd /home/edykw/pian-jing-bilingual
+   cd /home/edmund/pian-jing-bilingual
    python3 scripts/build_html.py
    ```
-3. **If you re-translate a chapter**, update the matching file in `data/en/`, then run:
+3. **If you re-translate or edit a chapter in `data/en2/`**, run:
    ```bash
+   cd /home/edmund/pian-jing-bilingual
+   python3 scripts/verify_en2.py
    python3 scripts/merge_en.py
    python3 scripts/build_html.py
    ```
