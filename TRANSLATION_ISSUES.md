@@ -2,7 +2,7 @@
 
 - **Evaluator Model**: `Qwen/Qwen3.5-35B-A3B`
 - **Total Scored**: 466 segments
-- **Average Overall Score**: 9.65 / 10
+- **Average Overall Score**: 9.67 / 10
 - **Average Accuracy**: 9.48 / 10
 - **Average Fluency**: 9.14 / 10
 - **Flagged Segments (Score <= 6)**: 0

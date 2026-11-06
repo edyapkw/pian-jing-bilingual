@@ -249,13 +249,27 @@ CONTEXT_VERIFIED_FIXES: dict[tuple[str, int], tuple[str, str]] = {
         'When Lu went away again, the young masters came calling once more. The woman said, "If the two of you come at irregular times, I fear I may develop a bad illness. It would be better to set odd months for the elder young master and even months for the younger." The young masters agreed: "You are quite right. From now on, each month belongs to the appointed one, and he shall supply all the vegetables, rice, and provisions." Before they knew it, four years had passed, and she had borne two sons, both of the two young masters\' bloodline. Geomancer Lu had their fortunes read, and every diviner predicted great wealth and rank for them in the future. He then took his wife and sons and bade farewell to the two young masters, each of whom gave him generous parting gifts. Later, the two boys grew up and both passed the imperial examinations—in truth, the Yang family\'s auspicious fengshui had been secretly siphoned away without their ever knowing it.',
         "Kept Geomancer Lu ('When Lu went away again') as subject of the opening clause and improved flow.",
     ),
-    # cat-17-s03 p2: Clarify that Jing Ji (京季) is the courtesan from p1
+    # cat-17-s03 p0, p2, p3: Clarify that Jing Ji is the neighbor's maid (not a courtesan) and fix counter-suit logic
+    (
+        "cat-17-s03",
+        0,
+    ): (
+        "An Affair with a Neighbor's Maid Leads to Stolen Silver",
+        "Clarified 奸人婢致盗失银 as an affair with another's maid leading to stolen silver.",
+    ),
     (
         "cat-17-s03",
         2,
     ): (
-        'One day, while Ying was out drinking at a brothel, the courtesan Jing Ji quietly unlocked his room and stole over a hundred taels of silver. When Ying returned to the inn and discovered the silver missing, he pressed the innkeeper to make good the loss. Fellow lodger Wu Lun said, "When you keep silver in your room, you shouldn\'t go drinking far off at a brothel; even if you do, you should return early. You went out carousing and lost it—what does that have to do with the innkeeper? At noon today I saw Jing Ji go into your room; it must be that woman who stole it. You can report this to the officials, and the innkeeper and I will testify for you."',
-        "Clarified that Jing Ji is the courtesan from paragraph 1.",
+        'One day, while Ying was out drinking at a brothel, the maid Jing Ji quietly unlocked his room and stole over a hundred taels of silver. When Ying returned to the inn and discovered the silver missing, he pressed the innkeeper to make good the loss. Fellow lodger Wu Lun said, "When you keep silver in your room, you shouldn\'t go drinking far off at a brothel; even if you do, you should return early. You went out carousing and lost it—what does that have to do with the innkeeper? At noon today I saw Jing Ji go into your room; it must be that woman who stole it. You can report this to the officials, and the innkeeper and I will testify for you."',
+        "Clarified that Jing Ji is the neighbor's maid from paragraph 1 (not a courtesan).",
+    ),
+    (
+        "cat-17-s03",
+        3,
+    ): (
+        'Ying waited two days, but Ji did not come to the shop, so he filed a complaint with the prefectural authorities. Tingjie counter-sued that Ying had seduced his maid, and that when the affair was exposed, Ying feared being prosecuted and had made up the lost silver as a false claim to shift the blame. Prefect Zhang questioned the witnesses. Wu Lun and Chen Si testified: "We saw Ji enter Ying\'s room with our own eyes; it is true she stole the silver." Prefect Zhang questioned: "A guest\'s room and an unmarried girl\'s chamber—neither should be entered lightly. Since you saw Ji enter Ying\'s room, why didn\'t you stop her?" Lun replied: "Ying and Ji having an affair is also true; that is why when Ying was not in the shop, she unlocked the door and stole the silver." Having uncovered these facts, Prefect Zhang knew the silver had indeed been stolen by Ji; however, Tingjie was a prefectural degree candidate who had placed second in the recent examinations, so the prefect favored Tingjie\'s petition and ruled: "Since an illicit affair took place, the claimed loss of silver was merely a pretext to cover up the scandal. Ying was wrong to seduce a household maid and make up false excuses to shift blame. As the broker, Chen Si knew of the affair; why did he not admonish Ying to reform earlier? To testify biasedly only after the matter was exposed deserves punishment. Both are sentenced to a beating with the bamboo."',
+        "Clarified feminine pronouns for maid Ji and fixed Tingjie's counter-suit logic.",
     ),
     # cat-17-s04 p3: Keep bamboo-shoot accounts (笋帐) accurate to p1-p2 while fixing legal reasoning
     (
@@ -533,6 +547,104 @@ CONTEXT_VERIFIED_FIXES: dict[tuple[str, int], tuple[str, str]] = {
     ): (
         'Before long, the girl\'s mother arrived. The old woman came out with a welcoming smile and said, "Sorry to trouble your honored steps; we failed to prepare a sedan chair to meet you." The girl\'s mother immediately began cursing: "Your household has no decency! That old scoundrel of a father-in-law violated my daughter!" Feigning shock, the old woman cried, "Just now he fooled me by saying our daughter-in-law had secretly cooked herself a dish, and that she ran home because he beat and scolded her—how could he have done such a wicked thing? I\'ll have it out with that old dog to the death!" She cursed and railed at the top of her lungs, even more fiercely than her guest, leaving the girl\'s mother no room to get a word in. Then she said, "In a little while, you, I, my son, and my daughter-in-law—the four of us together—will seize him, beat him half to death, and pour nightsoil down his throat until he\'s unfit to show his face among men!" She ordered her daughter-in-law to slaughter plump chickens and ducks and lay out a lavish feast for her mother. After a round of loud cursing, they served tea and fruit, and the old woman said, "Walking in this heat makes one sticky; let us fetch water for you to bathe first, and then we can enjoy the midday meal in comfort." She ushered the girl\'s mother into the room to wash, while she herself went to the back kitchen to help her daughter-in-law warm the wine. Once the mother finished bathing, a man crawled out from beneath the vat, pressed two ingots of silver into her hands, threw his arms around her, and forced himself upon her. She cried out for her daughter and the old woman, but no one answered. The old villager said, "They are far off in the kitchen—how could they hear you?" Stripped for her bath, unable to break free, and reluctant to part with the two ingots of silver in her hands, she silently submitted to him. When it was over, the old villager said, "In-law, do not believe your daughter\'s tale. Our coming together today was also fated from a former life. I was hiding in here out of fear of you—who would have thought they would send you into this room to bathe, and that you and I would share this intimacy first? From now on, I will never harbor another thought toward your daughter." With that, he walked out.',
         "Preserved 'two ingots of silver' (两锭 / 两槽银), clear kinship terms (girl's mother vs. old woman), and standard double quotes.",
+    ),
+    (
+        "cat-16-s00",
+        1,
+    ): (
+        'In the capital lived a man named Fang Ba, dull-witted and earning his living by scavenging the streets. He had only an old mother at home. One day, while scavenging, he went to a small river to wash himself. Toward evening, a woman dressed in hemp mourning clothes stood nearby and waited until he finished washing. She then said to Fang Ba, "I am heading to my maiden family\'s home, but I cannot arrive tonight. May I rest at your house for the night?" Fang Ba replied, "My home is no place to stay. Why not go to an inn?" The woman said, "Inns are crowded with all sorts of people; lodging there is inconvenient. Who else lives in your house?" Fang Ba answered, "Only my old mother." The woman replied, "If you have a mother, then we can stay together."',
+        "Standardized double quotation marks on dialogue.",
+    ),
+    (
+        "cat-16-s00",
+        4,
+    ): (
+        'Three days before the hearing, the woman and her mother-in-law went to merchant Wang\'s cloth shop and said, "Your beating killed my husband—that is certain. My mother-in-law is old, and I alone cannot support us. Having you pay with your life helps no one. If you can provide three hundred taels to support my mother-in-law, she can withdraw the complaint and waive the inquest." Delighted at the offer, Wang sent an intermediary to negotiate and agreed to pay two hundred taels for Fang\'s mother\'s upkeep. Following the woman\'s instructions, the mother herself submitted a settlement statement: "I am poor and old; my son is dead, and my daughter-in-law is a widow. We have no means of survival. At the urging of relatives and neighbors, let Wang pay one hundred taels for my upkeep, and waive the inquest." The official approved the settlement, ordered Wang beaten with twenty strokes of the bamboo, imposed a heavy penalty, and allowed Fang Ba\'s wife to collect the silver and return home. Two days later, the woman stole the two hundred taels and fled under cover of night, vanishing without a trace. When Fang\'s mother sought to file another complaint, Wang paid another twenty taels to hush the matter up.',
+        "Clarified 'merchant Wang\\'s cloth shop' (not inn) and accurately translated '儿死妇寡' ('my son is dead, and my daughter-in-law is a widow').",
+    ),
+    (
+        "cat-16-s01",
+        4,
+    ): (
+        'Note: The swindlers\' cleverness lay in seeing that Lady Cui and her servants were all at the temple; they then tricked a junior household servant into serving tea. They also claimed the brother-in-law wished to avoid being seen openly asking for celebratory gifts and wanted the silver handed over in the garden lodge—thus enabling the fraud. Graduate Hong lost his silver and was forced to flee on top of it. Moreover, the prefect believed the story of an attempted abduction and opened an official case. Taking a concubine away from home and expecting things to go smoothly? Truly difficult! How can one ever act without verifying the facts?',
+        "Clarified Lady Cui (崔命妇, a widow) and her brother-in-law (崔家大伯).",
+    ),
+    (
+        "cat-16-s02",
+        3,
+    ): (
+        'When it was time to depart, Yanji hired a sedan chair himself and fabricated a story that his maternal uncle\'s house was sending for his mother. After boarding the boat, she learned only then that her son had sold her off in marriage to a traveling merchant. Deeply enraged, she held her temper and asked, "Since you have married me off to someone, why hide it from me? And who is the man marrying me?"',
+        "Fixed 'maternal uncle\\'s house' for 母舅家 (not mother-in-law).",
+    ),
+    (
+        "cat-18-s00",
+        2,
+    ): (
+        'Shortly the oil seller arrived. Seeing no other way to put him off, Lady Shi forced a smile, came out to meet him, and said, "Twice I set a date for you to collect the silver, but I have no way to raise it. Better that I give myself to you instead." Seeing her beaming, the oil seller felt lust rise in him and asked, "There are people inside your house—are you tricking me?" Lady Shi replied, "My husband has gone to plow the fields, and my elder sister-in-law is next door spinning hemp. There is no one else here, which is why I was bantering with you." Reassured, the oil seller went into the bedroom with her. Hearing the bedroom door bolted, Lady Zuo slipped out quietly, poured the oil out from both carrying baskets, filled them halfway with water, and returned to listen closely at the door. The younger sister-in-law said, "We are finished—get up." The oil seller pleaded, "Stay with me just a bit longer." Holding her hemp basket, Lady Zuo dashed out past the main gate and called out loudly on purpose, "It isn\'t even noon yet—how is the field-worker back already?" Hearing voices outside, the oil seller hurriedly came out with his carrying pole and ran right into her at the gate. Lady Zuo asked, "Did my sister-in-law pay you for the oil?" The oil seller quickly answered, "Paid! Paid!" and carried his load off to sell in the next village. Knowing he was sure to return, Lady Zuo waited by the main gate.',
+        "Fixed 'give myself to you instead' (把我还你), elder sister-in-law (伯姆), and consistent kinship titles.",
+    ),
+    (
+        "cat-18-s00",
+        3,
+    ): (
+        'Near noon, the oil seller returned. Lady Zuo said: "You are still here? My sister-in-law\'s brother came carrying buckets to fetch water. Seeing a load of oil standing in the house with no one around, and only voices and laughter coming from her room, he suspected an affair with the oil seller. He poured all the oil into his buckets, filled your baskets halfway with water, and went home to report to his mother. Mother and son have come straight here to catch the lovers. By the time they arrived, the oil carrier was gone, and they are still full of suspicion. If they discover you here, they will certainly confront you." The oil seller turned to flee. Lady Zuo caught hold of him: "I gave you warning; you must reward me." The oil seller said: "Tomorrow I will send you two catties of oil."',
+        "Standardized 'two catties of oil' for 两斤油 per TRANSLATION_GUIDE.md.",
+    ),
+    (
+        "cat-18-s00",
+        5,
+    ): (
+        'Soon someone called out selling meat. The two women called him in, each had two catties weighed out, and agreed that he should collect the silver on his way back. The butcher carried his load out. Lady Zuo said, "Just now we got the oil; now what about this meat?" Lady Shi said, "Meat goes into our stomachs; if my husband comes home, sees nothing, and asks about it, what then?" The elder sister-in-law said, "You have no wits of your own; listen to my plan. If you listen to me once more, not only will we eat his meat for nothing, but someone will also pay for that earlier oil on your behalf." Lady Shi asked, "What if I listen to you again?" The elder said, "Just now I saw the young butcher is handsome too. Do it with him once more, and the meat money will be wiped out. When he comes for payment, say the same as before: that you will pay him with yourself. I will come in from outside and say my brother-in-law has returned; he will panic and won\'t dare ask for the meat." Lady Shi said, "I leave everything in your hands, sister-in-law."',
+        "Standardized 'two catties' for 二斤 and clarified 'brother-in-law has returned' for 叔叔回.",
+    ),
+    (
+        "cat-18-s00",
+        6,
+    ): (
+        'When the butcher finished his tryst with Lady Shi and stepped out, he asked, "Where has my meat gone?" Lady Zuo replied, "My brother-in-law carried it off to the village elder." The butcher exclaimed, "How could you steal my meat?" Lady Zuo retorted, "You have some nerve! My brother-in-law came home, saw the load of meat sitting here, and found the bedroom door bolted from inside. Hearing the two of you giggling and whispering, he knew you were having an affair with his wife and told me to watch the door. I had no wish to eavesdrop on your antics, so I sat out here. Just sit a moment; the man who took your meat will be right back." The butcher hoisted his empty baskets and bolted. Lady Zuo grabbed hold of him: "Leave a butcher\'s knife with me as a pledge." The butcher said, "Do me this favor; tomorrow I will send you two catties of meat." Lady Zuo let go, and the butcher fled as fast as his legs could carry him.',
+        "Clarified 叔叔 as brother-in-law and standardized 'two catties of meat' for 两斤肉.",
+    ),
+    (
+        "cat-18-s01",
+        0,
+    ): (
+        "Violating the Daughter-in-Law, Then Tricking Her Mother into Bed",
+        "Clarified 爬灰复骗奸姻母 (violating the daughter-in-law, then tricking her mother into bed).",
+    ),
+    (
+        "cat-18-s01",
+        4,
+    ): (
+        'The girl\'s mother went into the kitchen and saw her daughter and the old woman setting out the dishes. Realizing they could not have heard her cries, she drank and smiled at her ease during the noon feast, never mentioning the harassment of her daughter.',
+        "Clarified that 姻母 is the girl's mother entering the kitchen (not the mother-in-law).",
+    ),
+    (
+        "cat-18-s01",
+        5,
+    ): (
+        'After the meal, she took her leave. The old woman repeatedly urged her to stay, and her daughter said, "I called you here to stand up for me, yet you only care for eating and drinking their wine—how could you be so muddled in your old age?" The girl\'s mother replied, "As a woman, I cannot even make decisions for myself; how could I decide for you? Your father-in-law is a scoundrel, but your mother-in-law is virtuous. As long as mother-in-law and daughter-in-law stay together, no evil will come of it." Unable to persuade her to stay, the old woman presented her with generous gifts of food and fruit and happily saw her off. The storm of rage was transformed in an instant into peaceful harmony—all thanks to the old woman\'s cunning mediation. She too was a consummate swindler.',
+        "Clarified girl's mother vs. old woman/mother-in-law throughout the dialogue and conclusion.",
+    ),
+    (
+        "cat-18-s01",
+        6,
+    ): (
+        'Note: Women should not lightly visit the homes of relatives by marriage. If a cunning woman colludes with her husband to lay a trap, many an in-law is defiled without anyone ever knowing. As with this old village woman tricking her female in-law: though it was a clever one-time ruse to settle a dispute, she also knew that women\'s hearts are fickle as flowing water; once secretly trapped by lust and profit, they will never dare speak of it openly. Let future generations take warning.',
+        "Clarified 'female in-law' for 姻母 (rather than confusing with mother-in-law).",
+    ),
+    (
+        "cat-18-s02",
+        2,
+    ): (
+        'The next day after the meal, the tenant pretended to go to his father-in-law\'s house to borrow silver to pay the landlord the rent-grain (miao). His mother also instructed the daughter-in-law: "When the landlord arrives, we will have no dishes to offer him. I will go to the upper village to ask for a catty of meat, and then to my brother\'s house to fetch a chicken. Whether the rent-grain is paid or not, we must treat the landlord to a meal. Prepare a brazier for him to keep warm." Standing outside the door, the landlord had already overheard everything. After the two departed, the wife brought out the brazier and fanned the fire. The landlord asked, "Where did your mother-in-law go?" The wife replied, "To prepare dishes." He asked again, "Where is your husband?" The wife said, "He went to my father\'s house to borrow silver to pay your rent-grain; I do not know if he will succeed." The landlord said, "Why borrow from your father? Just borrow from yourself." The wife said, "If I had silver, I would have sent it to you long ago." The landlord said, "If you had kept me company last night, I would have written off the rent-grain for you." The wife said, "If sleeping together can count as silver, come tonight and I will keep you company." The landlord rose and said, "Why wait for tonight? Fortunately no one is here today—let us amuse ourselves now. If your husband borrows the silver, I will secretly weigh out three qian for you to buy cloth; if there is no silver, I will extend your deadline until next year." The wife agreed, and they went into the bedroom together. Peering from a hiding place, the tenant slipped out and waited outside the door. Hearing laughter and merriment inside, he was naturally on edge, wishing he could burst in immediately. After a long while, the landlord said, "Get up." The wife said, "No hurry." Knowing the deed was done, the tenant shouted outside, "Who are you talking to in there?" and shoved the door open. Caught off guard, the two had no time to hide. The tenant yelled, "Ha! You scoundrel, violating my wife!" and dragged the landlord off the bed to beat him. The wife hurriedly put on her clothes and grabbed her husband\'s hands: "You married me out to another; I won\'t live in your house any longer!" The tenant said, "This slut deserves to be beaten to death too!" The three of them rolled together in a scuffle, so his blows could not land cleanly. Just then, the mother returned carrying the meat and chicken: "What is going on?" The tenant said, "The landlord violated my wife; I caught them in bed, and I am going to beat them both to death!" The mother pointed at the landlord: "You are the son of a respectable family; you should not have done this. Better to give my daughter-in-law silver to hush the shame." The landlord said, "I will write off three years of rent-grain and let the matter drop." The tenant snatched his wife\'s foot-binding cloth and looped it around the landlord\'s neck: "I won\'t agree!" He walked out, took up a knife, and began sharpening it: "I will kill him for sure!" The mother rushed out, grabbed the knife, and said, "He comes from an official family; they have abundant gold and silver, more than enough to give you. If you kill him, neither you nor I will ever live in peace." She went back inside and urged the landlord: "My son has a fierce temper; write him a land deed as well." The landlord said, "Very well." The mother fetched paper for him to write the deed. Standing beside him, the tenant forced him to include the adjoining fields as well, totaling twenty mu, priced at twenty taels. The landlord wrote that too. The mother conferred with her son again: "We only meant to write off the rent-grain, never expecting to get twenty taels more. Tonight you must go elsewhere to sleep; let our daughter-in-law keep him company for one night so his heart is satisfied, and that will guarantee no trouble later." The tenant said, "The money spent to buy a wife has been fully recovered; let him have her for one night."',
+        "Standardized 'a catty of meat' for 一斤肉, clarified rent-grain (miao), and improved narrative consistency.",
+    ),
+    (
+        "cat-18-s03",
+        2,
+    ): (
+        'While they were making their secret arrangement, the woman\'s second-eldest uncle\'s wife ahead fell from her horse. The woman pointed at the groom: "Quick, go help my younger aunt." The groom walked forward but kept turning back: "Don\'t try to trick me." The woman said, "If the younger aunt gets badly hurt, she\'ll surely have to stop and rest on the road. Then our scheme is certain to succeed." The groom hurried off immediately.',
+        "Standardized double quotes on groom's direct speech.",
     ),
 }
 
