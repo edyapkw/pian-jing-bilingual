@@ -7,7 +7,7 @@
     "stories": [
       {
         "title_zh": "商伙财反丧财",
-        "title_en": "A Merchant Partner Cheats Others and Loses His Fortune",
+        "title_en": "Coveting a Fellow Merchant's Fortune Only to Lose One's Own",
         "paragraphs": [
           {
             "kind": "body",
@@ -100,7 +100,7 @@
       },
       {
         "title_zh": "高抬重价反失利",
-        "title_en": "He Insists on a High Price and Misses the Market",
+        "title_en": "Holding Out for a High Price, He Loses the Profit",
         "paragraphs": [
           {
             "kind": "body",
@@ -125,11 +125,11 @@
     "id": "cat-10",
     "slug": "盜劫騙",
     "title_zh": "第十類 盜劫騙",
-    "title_en": "Category 10 · Theft and Robbery",
+    "title_en": "Category 10 · Theft and Robbery Swindles",
     "stories": [
       {
         "title_zh": "公子租屋劫寡妇",
-        "title_en": "Posing as an Exam Candidate, They Lease a House and Loot a Widow",
+        "title_en": "A Young Master Rents a House and Loots a Widow",
         "paragraphs": [
           {
             "kind": "body",
@@ -181,7 +181,7 @@
       },
       {
         "title_zh": "京城店中响马贼",
-        "title_en": "A Noisy Bandit Targeting a Capital Shop",
+        "title_en": "A Mounted Bandit Strikes a Capital Shop",
         "paragraphs": [
           {
             "kind": "body",
@@ -196,7 +196,7 @@
           {
             "kind": "note",
             "zh": "按：响马贼尝在林路僻处动夺行旅，飞马而去。今在京城中行此，亦大奇也。且彼衣冠既美，有马在旁，其谁防之？今后上店买物，或有异色人在旁，须当严防，勿使银入人手，是亦老实照管之一策也。",
-            "en": "Note: Mounted highwaymen usually strike travelers on lonely forest roads and gallop off. To do this inside the capital is also a rare wonder. And he was well dressed, with a horse beside him—who would guard against him? From now on, when you go into a shop to buy, if a strange-looking person is standing by, you must watch strictly, and not let silver pass into another man’s hand. That too is one honest way of looking after yourself."
+            "en": "Note: Mounted highwaymen usually strike travelers on lonely forest roads and gallop off. To do this inside the capital is a rare wonder. And he was well dressed, with a horse beside him—who would guard against him? From now on, when you go into a shop to buy, if a strange-looking person is standing by, you must keep a close watch, and not let silver pass into another man’s hand. That too is one plain way of looking after yourself."
           }
         ]
       }
@@ -206,7 +206,7 @@
     "id": "cat-11",
     "slug": "搶劫騙",
     "title_zh": "第十一類 搶劫騙",
-    "title_en": "Category 11 · Forcible Seizure",
+    "title_en": "Category 11 · Robbery Swindles",
     "stories": [
       {
         "title_zh": "私打印记占铺陈",
@@ -263,7 +263,7 @@
       },
       {
         "title_zh": "大解被棍白日抢",
-        "title_en": "Crooks Strip Him at the Latrine in Open Day",
+        "title_en": "Robbed by Crooks in Broad Daylight While Relieving Himself",
         "paragraphs": [
           {
             "kind": "body",
@@ -283,11 +283,11 @@
     "id": "cat-12",
     "slug": "在船騙",
     "title_zh": "第十二類 在船騙",
-    "title_en": "Category 12 · On the Boat",
+    "title_en": "Category 12 · On-the-Boat Swindles",
     "stories": [
       {
         "title_zh": "船载家人行李逃",
-        "title_en": "Boatmen Abscond with a Servant and the Baggage",
+        "title_en": "Boatmen Abscond with a Servant and the Luggage",
         "paragraphs": [
           {
             "kind": "body",
@@ -308,7 +308,7 @@
           {
             "kind": "body",
             "zh": "扬州有一危棍，以骗局为生。生一女危氏，美貌聪明，年方二八，尚未字人。同帮计棍，青年伶俐，家无父母，危棍因以女招赘为婿。夫妻欢爱，岳婿同心。",
-            "en": "In Yangzhou there was a crook named Wei, who lived by swindles. He had a daughter, Miss Wei, pretty and clever, just sixteen, not yet betrothed. A partner in the same trade, Crook Ji, was a young man of ready wits, with no parents at home; Crook Wei therefore took him as a live-in son-in-law. Husband and wife loved each other, and father-in-law and son-in-law were of one mind."
+            "en": "In Yangzhou there was a crook named Wei, who lived by running swindles. He had a daughter, Miss Wei, pretty and clever, just sixteen, not yet betrothed. A partner in the same racket, a young sharp named Ji, had no parents at home; Wei therefore took him as a live-in son-in-law. Husband and wife loved each other, and father-in-law and son-in-law were of one mind."
           },
           {
             "kind": "body",
@@ -365,7 +365,7 @@
       },
       {
         "title_zh": "带镜船中引谋害",
-        "title_en": "Heavy Mirrors on Board Draw a Murder Plot",
+        "title_en": "Mirrors on the Boat Invite a Murder Plot",
         "paragraphs": [
           {
             "kind": "body",
@@ -396,7 +396,7 @@
       },
       {
         "title_zh": "行李误挑往别船",
-        "title_en": "A Servant Puts the Bags on Another Boat by Mistake",
+        "title_en": "Luggage Carried onto the Wrong Boat",
         "paragraphs": [
           {
             "kind": "body",
@@ -412,7 +412,7 @@
       },
       {
         "title_zh": "脚夫挑走起船货",
-        "title_en": "A Porter Dashes Off with Unloaded Cargo",
+        "title_en": "A Porter Runs Off with Goods Fresh off the Boat",
         "paragraphs": [
           {
             "kind": "body",

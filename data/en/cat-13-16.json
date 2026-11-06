@@ -3,11 +3,11 @@
     "id": "cat-13",
     "slug": "詩詞騙",
     "title_zh": "第十三類 詩詞騙",
-    "title_en": "Category 13 · Verse and Wit",
+    "title_en": "Category 13 · Swindles by Verse",
     "stories": [
       {
         "title_zh": "伪装道士骗盐使",
-        "title_en": "Posing as Daoists to Swindle the Salt Censor",
+        "title_en": "Posing as Daoists to Swindle the Salt Inspector",
         "paragraphs": [
           {
             "kind": "body",
@@ -73,7 +73,7 @@
     "id": "cat-14",
     "slug": "假銀騙",
     "title_zh": "第十四類 假銀騙",
-    "title_en": "Category 14 · Counterfeit Silver",
+    "title_en": "Category 14 · Counterfeit-Silver Swindles",
     "stories": [
       {
         "title_zh": "设假元宝骗乡农",
@@ -113,7 +113,7 @@
           {
             "kind": "body",
             "zh": "钱天广，福建安海人也。时买机布，往山东冒州药王会卖。会期四月十五日起，二十五日止。天下货物，咸在斯处交卸。无牙折中，贸易二家自处。",
-            "en": "Qian Tianguang was a man of Anhai in Fujian. At the time he bought loom cloth and went to sell it at the Medicine King Fair in Maozhou, Shandong. The fair ran from the fifteenth of the fourth month to the twenty-fifth. Goods from all under heaven were delivered and sold there. There were no brokers to mediate; the two sides dealt on their own."
+            "en": "Qian Tianguang was a man of Anhai in Fujian. Once he bought loom-woven cloth and took it to sell at the Medicine King Fair in Maozhou, Shandong. The fair ran from the fifteenth of the fourth month to the twenty-fifth, and goods from all over the empire were unloaded and traded there. There were no brokers to set a middle price; buyer and seller dealt directly with each other."
           },
           {
             "kind": "body",
@@ -128,7 +128,7 @@
           {
             "kind": "body",
             "zh": "松纹，与细丝一样，其皆足色也。",
-            "en": "Pine-grain (songwen) is the same as fine-thread (xisi); both are full-color, pure silver."
+            "en": "Pine-grain (songwen) is the same as fine-thread (xisi); both are silver of full fineness."
           },
           {
             "kind": "body",
@@ -158,7 +158,7 @@
           {
             "kind": "body",
             "zh": "茶花，以纹银九钱，入铅一钱，入炉中锅内不用一毫之硝，明倾取出，以把淡底填于脚。后泻银于内，铅方不露，而自成其粗丝也，曰茶花。",
-            "en": "Tea-flower (chahua): take nine qian of fine silver and one qian of lead, put them in the furnace pan with not a scrap of niter, pour it out openly, pack a pale base into the “feet,” then pour the silver in so the lead does not show, and coarse threads form of themselves; hence “tea-flower.”"
+            "en": "Tea-flower (chahua): take nine qian of fine silver and one qian of lead, put them in the furnace pan without a speck of niter, and pour it out openly. A pale base is packed into the feet, and the silver is then poured in so the lead does not show, while coarse threads form of themselves—hence “tea-flower.”"
           },
           {
             "kind": "body",
@@ -208,7 +208,7 @@
           {
             "kind": "body",
             "zh": "七成饼，出炉墨黑，亦用砂擦及用盐梅洗之方白，其剪口带赤。",
-            "en": "Seven-tenths cake comes from the furnace ink-black; you also rub it with sand and wash it with salted plums before it is white; the snipped mouth has a reddish tinge."
+            "en": "Seven-tenths cake comes out of the furnace ink-black; it too must be rubbed with sand and washed with salted plums to turn white, and the snipped edge carries a reddish tinge."
           },
           {
             "kind": "body",
@@ -258,7 +258,7 @@
     "id": "cat-15",
     "slug": "衙役騙",
     "title_zh": "第十五類 衙役騙",
-    "title_en": "Category 15 · Yamen Runners",
+    "title_en": "Category 15 · Swindles by Yamen Runners",
     "stories": [
       {
         "title_zh": "入聞官言而出騙",
@@ -314,12 +314,12 @@
       },
       {
         "title_zh": "吏呵罪囚以分责",
-        "title_en": "A Clerk Scolds a Convict in Order to Split the Beating",
+        "title_en": "A Clerk Berates a Convict to Split the Beating",
         "paragraphs": [
           {
             "kind": "body",
             "zh": "传包孝肃为官，清廉明察，用法无私，诈不得以巧辨售，罪不得以权贵免，又不纳分上。故人称之曰：“关节不到，有阎罗包老。”",
-            "en": "It is told that when Bao Xiaosu was in office he was clean, clear-eyed, and used the law without private feeling. Trickery could not sell itself by clever argument; punishment could not be escaped by powerful connections; and he took no private word. So people said of him, “Where no private channel can reach, there is Yama Bao.”"
+            "en": "It is told that when Bao Xiaosu held office he was clean-handed and clear-sighted, and applied the law without favor: no cheat could talk his way out with clever arguments, no guilty man could escape through powerful friends, and he accepted no private intercession. So people said of him, \"Where no back-door appeal can reach, there stands old Bao, dread as King Yama of the underworld.\""
           },
           {
             "kind": "body",
@@ -334,7 +334,7 @@
           {
             "kind": "note",
             "zh": "按：吏为姦，皆是知本官性情，而变幻用之。老胥知包公严明，岂容胥吏招权？故旁呵犯人，包公必责吏而故恕犯人，以见胥吏之无权，欲外人不畏慑之。岂知于难减责之中，故分责以取其贿，又孰从而察之？公且受胥騙，况后之为官者哉！",
-            "en": "Note: When clerks work fraud, they all know their superior’s temper and twist it to use. The old clerk knew Lord Bao was strict and clear, and would never let a clerk gather power. So he shouted at the prisoner from the side: Lord Bao was bound to beat the clerk and deliberately spare the prisoner, to show that clerks have no power, and so that people outside would not stand in awe of them. Who would have thought that, in a beating that could hardly be reduced, he would split the beating in order to take a bribe—and who would see through it? Even his lordship was swindled by a clerk; how much more those who hold office after him!"
+            "en": "Note: When clerks work their frauds, it always begins with knowing their own official's temperament and turning it to their use. The veteran clerk knew Lord Bao was strict and clear-sighted and would never let underlings gather power. So he shouted at the prisoner from the side, certain that Lord Bao would beat the clerk and deliberately spare the prisoner—to prove that clerks hold no power and keep outsiders from standing in awe of them. Who would have guessed that, inside a beating that could hardly be reduced, he was splitting the strokes to collect a bribe? And who could possibly detect it? Even Lord Bao was swindled by a clerk—what hope is there for the officials who come after him?"
           }
         ]
       }
@@ -344,7 +344,7 @@
     "id": "cat-16",
     "slug": "婚娶騙",
     "title_zh": "第十六類 婚娶騙",
-    "title_en": "Category 16 · Marriage",
+    "title_en": "Category 16 · Marriage Swindles",
     "stories": [
       {
         "title_zh": "妇嫁淘街而害命",
@@ -363,7 +363,7 @@
           {
             "kind": "body",
             "zh": "次日，妇以银六钱与夫籴米买菜蔬。第三日，问婆母曰：“何不做身衣服穿？”婆称无银。妇又出银六钱，叫夫在汪客大布店买之。房八既得妻，又前后得银作家，心中扬扬喜色，往汪店买青布二端归。妇各将剪去三尺，故持尺量曰：“此是剪剩之布，未成全匹。何被人瞒也？可持去与换。有好银买布，他何得如此亏人？”房八听妻言去换。汪店言：“我家哪有零布？是你自剪起胡赖我。”二人各争一场。汪客令家人再以二端与之。及持归，妇背地以剪刀刺破几叶，后将展开，又曰：“如何又换两匹碾烂布？这布店好可恶！他欺你纯善，故敢诳你。今次不换，可放言骂他，怕他什么！”房八被妻激，忿忿往说：“你以破布诳我。”汪客说：“你买一匹布，来换许多次，店中哪有此功夫！”不换与他。房八便纵言秽骂。汪客怒，喝令家人扯打一顿，后以两匹布打开看明，掷与之。房八执布归，言被打之恨。妻怒，顿足曰：“有银买布，反招他打。他靠财势，可拼命与他作对。吾与婆能替你申冤。”又激夫到店凶泼。汪店家人又群起痛打，带重伤而归。妇哭曰：“必往告保辜状。”遂往御史处告准。归买好酒好菜，劝夫多饮，方可散血。夫被其劝，酩酊大醉。夜乘醉，紧绑其手足，以沙塞口鼻，至三更死已久，解其绑绳。妇故喊曰：“你儿身冷了，硬了，莫非是死？”吓得婆起看，儿已死。二人相对哭尽哀，复往御史处补状。差官检验收贮，遍体都有重伤。汪客惊惶无措。",
-            "en": "The next day, the woman gave her husband six qian of silver to buy rice and vegetables. On the third day, she asked her mother-in-law, \"Why not have some clothes made?\" The old woman said she had no silver. The woman then produced another six qian and told her husband to buy cloth at Merchant Wang’s large shop. Fang Ba, having already secured a wife and accumulated silver over time, was flushed with triumph. He went to Wang’s shop, bought two bolts of blue cloth, and returned home. The woman cut three chi from each bolt, then deliberately took a ruler and said, \"This is leftover cut cloth, not a full bolt. How were we cheated? Take it back and exchange it. We paid good silver for cloth; how can they short us like this?\" Fang Ba listened to his wife and went to exchange it. Wang’s shop retorted, \"When did we ever have remnant cloth? You cut it yourself to cheat us.\" The two argued. Wang ordered his men to give them two more bolts. When he brought them home, the woman, behind his back, stabbed several folds with scissors, then spread them out and said again, \"How is it you exchanged two more bolts of crushed, ruined cloth? This shop is hateful! They see you are simple, so they dare lie to you. If they won't exchange this time, curse them out loud. What is there to fear?\" Stirred up by his wife, Fang Ba went in a rage and said, \"You tricked us with broken cloth.\" Wang replied, \"You buy one bolt and come to exchange it many times. What shop has time for that?\" He refused to exchange. Fang Ba then let fly with filthy abuse. Wang grew angry, ordered his men to drag him and beat him, then opened the two bolts, inspected them, and threw them at him. Fang Ba took the cloth home and recounted the beating with resentment. The wife stamped her foot in anger: \"We paid silver for cloth and instead got a beating. He relies on money and power. Fight him tooth and nail. Your mother and I can plead your wrong.\" She stirred her husband up again to go to the shop and cause a violent scene. Wang’s household men rose together and beat him badly; he came home with heavy wounds. The woman wept: \"We must file a complaint to hold them liable for the wounds.\" She went to the censor and had the complaint accepted. Coming home, she bought good wine and dishes, and urged her husband to drink heavily so the bruising would disperse. Urged by her, he got dead drunk. That night, while he was drunk, she bound his hands and feet tight, stuffed sand in his mouth and nose, and by the third watch he had long been dead. She untied the ropes. Then she deliberately cried, \"Your son’s body is cold and stiff—can he be dead?\" The frightened mother rose to look: her son was dead. The two wept together in full mourning, then went back to the censor to file an additional complaint. Officers examined and impounded the body: there were heavy wounds all over. Wang the merchant was terrified and at a loss."
+            "en": "The next day, the woman gave her husband six qian of silver to buy rice and vegetables. On the third day, she asked her mother-in-law, \"Why not have some clothes made?\" The old woman said she had no silver. The woman then produced another six qian and told her husband to buy cloth at Merchant Wang’s large shop. Fang Ba, having already secured a wife and accumulated silver over time, was flushed with triumph. He went to Wang’s shop, bought two bolts of blue cloth, and returned home. The woman cut three feet from each bolt, then deliberately took a ruler and said, \"This is leftover cut cloth, not a full bolt. How were we cheated? Take it back and exchange it. We paid good silver for cloth; how can they short us like this?\" Fang Ba listened to his wife and went to exchange it. Wang’s shop retorted, \"When did we ever have remnant cloth? You cut it yourself to cheat us.\" The two argued. Wang ordered his men to give them two more bolts. When he brought them home, the woman, behind his back, stabbed several folds with scissors, then spread them out and said again, \"How is it you exchanged two more bolts of crushed, ruined cloth? This shop is hateful! They see you are simple, so they dare lie to you. If they won't exchange this time, curse them out loud. What is there to fear?\" Stirred up by his wife, Fang Ba went in a rage and said, \"You tricked us with broken cloth.\" Wang replied, \"You buy one bolt and come to exchange it many times. What shop has time for that?\" He refused to exchange. Fang Ba then let fly with filthy abuse. Wang grew angry, ordered his men to drag him and beat him, then opened the two bolts, inspected them, and threw them at him. Fang Ba took the cloth home and recounted the beating with resentment. The wife stamped her foot in anger: \"We paid silver for cloth and instead got a beating. He relies on money and power. Fight him tooth and nail. Your mother and I can plead your wrong.\" She stirred her husband up again to go to the shop and cause a violent scene. Wang’s household men rose together and beat him badly; he came home with heavy wounds. The woman wept: \"We must file a complaint to hold them liable for the wounds.\" She went to the censor and had the complaint accepted. Coming home, she bought good wine and dishes, and urged her husband to drink heavily so the bruising would disperse. Urged by her, he got dead drunk. That night, while he was drunk, she bound his hands and feet tight, stuffed sand in his mouth and nose, and by the third watch he had long been dead. She untied the ropes. Then she deliberately cried, \"Your son’s body is cold and stiff—can he be dead?\" The frightened mother rose to look: her son was dead. The two wept together in full mourning, then went back to the censor to file an additional complaint. Officers examined and impounded the body: there were heavy wounds all over. Wang the merchant was terrified and at a loss."
           },
           {
             "kind": "body",
@@ -379,7 +379,7 @@
       },
       {
         "title_zh": "媒赚春元娶命妇",
-        "title_en": "A Matchmaker Tricks a Graduate into “Marrying” a Titled Lady",
+        "title_en": "A Matchmaker Cons a Provincial Graduate into 'Marrying' a Titled Lady",
         "paragraphs": [
           {
             "kind": "body",
@@ -420,12 +420,12 @@
           {
             "kind": "body",
             "zh": "临行，延纪自雇轿，诈称母舅家接母。上船后，始知子将己脱嫁于客，心中甚怒，只忍气问曰：“夫既以我嫁人，何必相瞒，且娶我者是谁？”天寿应曰：“是不才。”妇曰：“看君谅是个富翁，我亦无恨。但我因夫赌荡，衣资首饰悉藏母家。我同你去取，亦且令母家得知。”天寿信之，与邓氏偕往。氏入诉其子背将己嫁之事。其兄邓天明发怒曰：“哪有子敢嫁母者！是何客人敢斗胆而娶？”出将天寿乱打。邓氏救止曰：“谅客人亦不知情，只不孝延纪，胆大该死！”天明即具状告县。邹爷准状，差拘延纪，逃走不出；先拘汉卿、天寿到。邹爷审出大怒，将婚主、媒人各责二十，以天寿收监，着汉卿讨延纪。数月，终不能拿，累被拿限拷打。天寿投分上释监，邹爷竟不许。人教天寿曰：“贼要贼拿，赌钱要赌钱人拿。何不许银与赌棍人拿？”不数日，贼指延纪所在，差人拿到。邹爷审出延纪以子嫁母与远客作妾，责四十板，拟重典，身资银追入官；汉卿、天寿各拟杖惩；其母取氏，着兄邓天明领归供养，任自择嫁，批照付之。",
-            "en": "When it was time to depart, Yanji hired a sedan chair himself and fabricated a story that his maternal uncle's house was sending for his mother. After boarding the boat, she learned only then that her son had sold her off in marriage to a traveling merchant. Deeply enraged, she held her temper and asked, \"Since you have married me off to someone, why hide it from me? And who is the man marrying me?\""
+            "en": "When it was time to depart, Yanji hired a sedan chair himself and fabricated a story that his maternal uncle's house was sending for his mother. After boarding the boat, she learned only then that her son had sold her off in marriage to a traveling merchant. Deeply enraged, she held her temper and asked, \"Since you have married me off to someone, why hide it from me? And who is the man marrying me?\" Tianshou replied, \"It is this unworthy one.\" The woman said, \"Seeing you, I take you for a man of means, so I harbor no grudge. But because my late husband squandered everything in gambling, I hid all my clothes and jewelry at my mother's home. Let me take you there to fetch them, and at the same time let my family know.\" Tianshou believed her and went along with Mistress Deng. Once inside, she poured out the tale of how her son had secretly married her off behind her back. Her elder brother Deng Tianming flared up in fury: \"Where has anyone ever heard of a son daring to marry off his own mother! And what traveler has the insolence to take her?\" He rushed out and began beating Tianshou wildly. Mistress Deng stepped in to stop him: \"The traveler surely knew nothing of the scheme; only that unfilial Yanji has the brazen nerve that deserves death!\" Tianming immediately drew up a complaint and filed it with the county. Magistrate Zou accepted the suit and dispatched runners to arrest Yanji, who went into hiding and could not be found; so they first brought in Hanqing and Tianshou. When Magistrate Zou learned the facts, he was furious. He had the marriage contractor and the matchmaker each given twenty strokes, remanded Tianshou to jail, and ordered Hanqing to produce Yanji. Months passed, yet Yanji still could not be captured, and Hanqing was repeatedly hauled in under deadlines and beaten. Tianshou sought to pull strings through influential backers to secure his release, but Magistrate Zou flatly refused. Someone advised Tianshou: \"A thief takes a thief to catch; a gambler takes a gambler to catch. Why not promise a silver reward to gamblers to capture him?\" Within a few days, local rogues pointed out Yanji's hiding place, and the runners arrested him. Magistrate Zou tried the case and established that Yanji, as a son, had married his own mother off to a distant traveler as a concubine. He sentenced him to forty strokes of the heavy cane and recommended the severest statutory punishment, confiscating the purchase money to the public coffers. Hanqing and Tianshou were each sentenced to caning as punishment. As for the mother, Mistress Deng, she was handed over to her brother Deng Tianming to care for at home, leaving her free to choose her own remarriage if she wished, and official clearance was granted."
           },
           {
             "kind": "note",
             "zh": "按：为嗣娶妾，礼律不禁，特当娶于附近小户。若出外省，慕色而娶，多酿后患。若此类者，可为炯戒矣。",
-            "en": "Note: Taking a concubine for the sake of an heir is not forbidden by ritual or statute. Only, one should take her from a nearby small household. If you go to another province and marry from lust for looks, you often brew later trouble. Cases of this kind may serve as a bright warning."
+            "en": "Note: Taking a concubine for the sake of an heir is not forbidden by ritual or law. Only, one should take her from a nearby small household. If you go to another province and marry out of lust for looks, you often brew later trouble. Cases of this kind may serve as a stark warning."
           }
         ]
       },
