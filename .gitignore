@@ -1,8 +1,11 @@
 .DS_Store
 *.swp
 __pycache__/
+.cache/
 .vercel
 .env
 .env.*
 translation_qa_report*.json
+dictionary_qa_report*.json
+i18n/dict.json.bak
 .env*

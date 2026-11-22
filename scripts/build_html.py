@@ -17,32 +17,56 @@ def esc(s: str) -> str:
     return html.escape(s, quote=True)
 
 
-def pair(zh: str, en: str, extra: str = "", inner_zh: str = "p", inner_en: str = "p", cls_zh: str = "", cls_en: str = "") -> str:
+def pair(
+    zh: str,
+    en: str,
+    extra: str = "",
+    inner_zh: str = "p",
+    inner_en: str = "p",
+    cls_zh: str = "",
+    cls_en: str = "",
+    pair_id: str = "",
+    data_loc: str = "",
+) -> str:
     zc = f' class="{cls_zh}"' if cls_zh else ""
     ec = f' class="{cls_en}"' if cls_en else ""
+    id_attr = f' id="{esc(pair_id)}"' if pair_id else ""
+    loc_attr = f' data-loc="{esc(data_loc)}"' if data_loc else ""
     return (
-        f'<div class="pair {extra}">\n'
+        f'<div class="pair {extra}"{id_attr}{loc_attr}>\n'
         f'  <div class="col zh"><{inner_zh}{zc}>{esc(zh)}</{inner_zh}></div>\n'
         f'  <div class="col en"><{inner_en}{ec}>{esc(en)}</{inner_en}></div>\n'
         f"</div>"
     )
 
 
-def render_story(story: dict, sid: str) -> str:
+def render_story(story: dict, sid: str, cat_title_zh: str) -> str:
     title_zh = story["title_zh"]
     title_en = story.get("title_en") or title_zh
+    loc_label = f"{cat_title_zh} · {title_zh}" if cat_title_zh else title_zh
     parts = [
         f'<article class="entry" id="{sid}">',
-        pair(title_zh, title_en, "pair-entry-title", "h3", "h3", "entry-title", "entry-title"),
+        pair(
+            title_zh,
+            title_en,
+            "pair-entry-title",
+            "h3",
+            "h3",
+            "entry-title",
+            "entry-title",
+            pair_id=f"{sid}-p0",
+            data_loc=loc_label,
+        ),
     ]
-    for para in story["paragraphs"]:
+    for p_idx, para in enumerate(story["paragraphs"], 1):
         zh = para["zh"]
         en = para.get("en") or ""
         kind = para.get("kind", "body")
+        pid = f"{sid}-p{p_idx}"
         if kind == "note":
-            parts.append(pair(zh, en, "pair-note", cls_zh="note", cls_en="note"))
+            parts.append(pair(zh, en, "pair-note", cls_zh="note", cls_en="note", pair_id=pid, data_loc=loc_label))
         else:
-            parts.append(pair(zh, en))
+            parts.append(pair(zh, en, pair_id=pid, data_loc=loc_label))
     parts.append("</article>")
     return "\n".join(parts)
 
@@ -61,7 +85,7 @@ def main() -> None:
                 f'<li><a href="#{esc(sid)}">{esc(story["title_zh"])}'
                 f'<span class="toc-en">{esc(title_en)}</span></a></li>'
             )
-            stories_html.append(render_story(story, sid))
+            stories_html.append(render_story(story, sid, cat["title_zh"]))
         toc_items.append(
             f'<li class="toc-cat">'
             f'<a class="toc-cat-link" href="#{esc(cat["id"])}">{esc(cat["title_zh"])}'
@@ -316,6 +340,199 @@ body.layout-stack .pair {
   .pair { grid-template-columns: 1fr; gap: 0.2rem; }
   .toc-cats { columns: 1; }
 }
+/* Dictionary popup, passage hyperlinks, and back-to-top */
+#back-top {
+  position: fixed;
+  right: 1.15rem;
+  bottom: 1.25rem;
+  z-index: 300;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 92, 76, 0.25);
+  background: var(--accent);
+  color: #f7fffc;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+#back-top.visible { display: flex; }
+body.dict-on #reader .col.zh { cursor: help; }
+#dict-toggle.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #f7fffc;
+}
+#dict-popup {
+  position: fixed;
+  z-index: 400;
+  width: min(340px, calc(100vw - 24px));
+  max-height: min(70vh, 420px);
+  overflow: auto;
+  background: #fffdf8;
+  color: var(--ink);
+  border: 1px solid rgba(15, 92, 76, 0.22);
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+  padding: 14px 16px 12px;
+  font-family: "DM Sans", "Noto Sans SC", sans-serif;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+#dict-popup[hidden] { display: none !important; }
+.dict-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  #dict-popup {
+    width: min(400px, calc(100vw - 32px));
+    max-height: min(60vh, 440px);
+  }
+  .dict-close {
+    width: 44px;
+    height: 44px;
+    top: 2px;
+    right: 2px;
+  }
+}
+@media (max-width: 640px) {
+  #dict-popup,
+  #dict-popup.dict-sheet {
+    left: 8px !important;
+    right: 8px !important;
+    width: auto;
+    max-width: none;
+    top: auto !important;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    max-height: min(52dvh, 360px);
+    border-radius: 14px;
+    padding: 16px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+  .dict-word { font-size: 20px; }
+  .dict-pinyin { font-size: 15px; }
+  .dict-defs, .dict-examples li { font-size: 14px; }
+  body:has(#dict-popup:not([hidden])) #back-top { display: none !important; }
+}
+.dict-entry + .dict-entry {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(40, 32, 20, 0.12);
+}
+.dict-word {
+  font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  padding-right: 28px;
+}
+.dict-pinyin {
+  font-family: "DM Sans", "Inter", "Noto Sans", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  color: var(--accent);
+  margin: 2px 0 8px;
+  letter-spacing: 0.02em;
+  font-variant-ligatures: none;
+}
+.dict-defs {
+  margin: 0 0 8px 1.1em;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.dict-empty { font-size: 13px; color: var(--ink-soft); margin: 0 0 8px; }
+.dict-ex-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 8px 0 4px;
+}
+.dict-examples { margin: 0; padding: 0; list-style: none; }
+.dict-examples li { margin-bottom: 6px; }
+.dict-example-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 13px;
+  line-height: 1.55;
+  background: #d7ebe4;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  border: 1px solid rgba(15, 92, 76, 0.14);
+  transition: background 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+.dict-example-link:hover,
+.dict-example-link:active {
+  background: #c4e2d8;
+  border-color: var(--accent);
+}
+.dict-ex-text { display: block; }
+.dict-ex-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 2px;
+}
+.dict-ex-loc { opacity: 0.9; }
+.dict-ex-jump {
+  font-size: 10.5px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(15, 92, 76, 0.12);
+  flex-shrink: 0;
+}
+.dict-example-link:hover .dict-ex-jump {
+  background: var(--accent);
+  color: #f7fffc;
+}
+.dict-examples mark {
+  background: rgba(15, 92, 76, 0.25);
+  color: inherit;
+  padding: 0 1px;
+  border-radius: 2px;
+}
+.dict-credit { font-size: 10px; color: #7a7368; margin-top: 8px; }
+@keyframes jumpPulseHighlight {
+  0% {
+    background-color: rgba(15, 92, 76, 0.22);
+    box-shadow: 0 0 0 8px rgba(15, 92, 76, 0.22);
+  }
+  70% {
+    background-color: rgba(15, 92, 76, 0.11);
+    box-shadow: 0 0 0 6px rgba(15, 92, 76, 0.11);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: 0 0 0 0 rgba(15, 92, 76, 0);
+  }
+}
+.pair.jump-highlight {
+  border-radius: 8px;
+  animation: jumpPulseHighlight 2.6s ease-out forwards;
+}
 '''
 
     js = r'''
@@ -387,6 +604,7 @@ body.layout-stack .pair {
       <button type="button" class="btn" id="fontDown" aria-label="Smaller text">A−</button>
       <button type="button" class="btn" id="fontUp" aria-label="Larger text">A+</button>
     </div>
+    <button type="button" class="btn active" id="dict-toggle" title="Dictionary" aria-label="词典" aria-pressed="true">典</button>
   </div>
 </nav>
 <aside class="toc" id="toc" hidden>
@@ -406,6 +624,7 @@ body.layout-stack .pair {
   <p><a href="#top">Back to top</a></p>
 </footer>
 <script>{js}</script>
+<script src="dictionary.js"></script>
 </body>
 </html>
 '''
