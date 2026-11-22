@@ -222,7 +222,10 @@ The project style guide (TRANSLATION_GUIDE.md) establishes these core translatio
    - 高手 means "real master / top hand / pro" (NOT "high hand").
    - 兩 / 銀 uses "taels" for 兩 and "pure/fineness" for 成色.
    - 緞 is heavy luxury "silk" (not modern shiny "satin").
-3. Do not penalize natural idioms that convey the true Ming meaning faithfully.
+3. Pinyin & Romanization accuracy:
+   - Verify that all Chinese personal names, place names, and parenthetical Ming terms (e.g. lizhang, jiashou, xiucai, jinshi, toutuo, piaobai, tiesui, baoxiao, cheke, daomao, tiansha, miao) use accurate standard Hanyu Pinyin (correct syllable spelling, word grouping, and heteronym reading).
+   - Common nouns and units with clear English equivalents (e.g. 兩 -> taels, 斤 -> catties, 尺 -> feet) should be translated rather than left as raw pinyin (standard Ming units like qian, fen, shi, mu, li are acceptable).
+4. Do not penalize natural idioms that convey the true Ming meaning faithfully.
 
 Given a Chinese source segment and its English translation, evaluate the quality.
 
@@ -317,9 +320,16 @@ def _validate_qa(data: dict) -> dict:
     }
 
 
-def qa_pair(zh: str, en: str, kind: str = "body", model: str | None = None) -> dict:
-    """Score one ZH/EN pair via ModelScope Qwen."""
-    user_msg = f"Segment Type: {kind}\n\nChinese: {zh}\n\nEnglish translation: {en}"
+def qa_pair(
+    zh: str,
+    en: str,
+    kind: str = "body",
+    model: str | None = None,
+    context_header: str = "",
+) -> dict:
+    """Score one ZH/EN pair via ModelScope Qwen (with optional story context)."""
+    prefix = f"{context_header}\n\nScore ONLY this target segment:\n" if context_header else ""
+    user_msg = f"{prefix}Segment Type: {kind}\n\nChinese: {zh}\n\nEnglish translation: {en}"
     return chat_json(QA_SYSTEM, user_msg, _validate_qa, model=model)
 
 
@@ -631,7 +641,24 @@ def run_qa(
         print(f"  EN: {en_snip}")
 
         try:
-            qa = qa_pair(pair["zh"], pair["en"], kind=pair.get("kind", "body"), model=active_model)
+            ctx_parts = []
+            if pair.get("story_title"):
+                ctx_parts.append(f"Story: {pair['story_title']} ({pair.get('story_id', '')})")
+            idx_in_all = next((k for k, cand in enumerate(pairs) if cand.get("story_id") == pair.get("story_id") and cand.get("paragraph_index") == pair.get("paragraph_index")), None)
+            if idx_in_all is not None:
+                if idx_in_all > 0 and pairs[idx_in_all - 1].get("story_id") == pair.get("story_id"):
+                    prev_p = pairs[idx_in_all - 1]
+                    ctx_parts.append(f"Context — previous segment (do not score):\n[{prev_p.get('kind')}] ZH: {prev_p['zh'][:260]}\nEN: {prev_p['en'][:260]}")
+                if idx_in_all + 1 < len(pairs) and pairs[idx_in_all + 1].get("story_id") == pair.get("story_id"):
+                    next_p = pairs[idx_in_all + 1]
+                    ctx_parts.append(f"Context — next segment (do not score):\n[{next_p.get('kind')}] ZH: {next_p['zh'][:260]}\nEN: {next_p['en'][:260]}")
+            qa = qa_pair(
+                pair["zh"],
+                pair["en"],
+                kind=pair.get("kind", "body"),
+                model=active_model,
+                context_header="\n\n".join(ctx_parts),
+            )
             result = {**pair, **qa}
             results.append(result)
 
@@ -675,7 +702,7 @@ def _auto_git_sync(message: str):
     """Automatically commit and push issues and script changes if inside git repo."""
     try:
         import subprocess
-        if not (ROOT / ".git").is_dir():
+        if not os.environ.get("AUTO_GIT_SYNC") or not (ROOT / ".git").is_dir():
             return
         subprocess.run(["git", "add", "TRANSLATION_ISSUES.md", "README.md", "scripts/verify_translations.py"], cwd=ROOT, check=False)
         diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT)
